@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bfk8t4ntv3xnw"]
+
+[ext_resource type="Script" path="res://RpgStats/Stat.gd" id="1_ykub0"]
+
+[sub_resource type="Curve" id="Curve_stnyp"]
+max_value = 100.0
+_data = [Vector2(0, 100), 0.0, 1.09529, 0, 0, Vector2(1, 100), 2.26427, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_ykub0")
+level_type = 1
+name = "Showable at Level 0"
+description = null
+xp_expression = ""
+xp_curve = SubResource("Curve_stnyp")
+max_level = 100
+max_xp = 100000000
+hidden = false
+hidden_at_zero_xp = false

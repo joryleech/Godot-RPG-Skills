@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Panel",
+"class": &"RpgStatMenuStat",
+"language": &"GDScript",
+"path": "res://RpgStats/Menu/RpgStatMenuStat.gd"
+}, {
+"base": "Resource",
+"class": &"Stat",
+"language": &"GDScript",
+"path": "res://RpgStats/Stat.gd"
+}, {
+"base": "Node",
+"class": &"StatContainer",
+"language": &"GDScript",
+"path": "res://RpgStats/StatContainer.gd"
+}, {
+"base": "RefCounted",
+"class": &"StatValue",
+"language": &"GDScript",
+"path": "res://RpgStats/StatValue.gd"
+}]
+_global_script_class_icons={
+"RpgStatMenuStat": "",
+"Stat": "",
+"StatContainer": "",
+"StatValue": ""
+}
+
+[application]
+
+config/name="RpgStats"
+run/main_scene="res://Sample/SampleScene.tscn"
+config/features=PackedStringArray("4.0", "Mobile")
+config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="mobile"
