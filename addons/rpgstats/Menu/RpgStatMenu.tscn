@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://1gjpif22xk8k"]
+
+[ext_resource type="Script" path="res://addons/rpgstats/Menu/RpgStatMenu.gd" id="1_nv86f"]
+[ext_resource type="PackedScene" uid="uid://l1cjj25qxcih" path="res://addons/rpgstats/Menu/rpg_stat_menu_stat.tscn" id="2_d64n1"]
+
+[node name="RpgStatMenu" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nv86f")
+statNodePrefab = ExtResource("2_d64n1")
+
+[node name="GuiStatContiner" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -11.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RpgStatMenuStat" parent="GuiStatContiner" instance=ExtResource("2_d64n1")]
+layout_mode = 2
+
+[node name="RpgStatMenuStat2" parent="GuiStatContiner" instance=ExtResource("2_d64n1")]
+layout_mode = 2
+
+[node name="RpgStatMenuStat3" parent="GuiStatContiner" instance=ExtResource("2_d64n1")]
+layout_mode = 2

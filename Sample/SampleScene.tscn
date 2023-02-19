@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bau6uxi7im5yr"]
+[gd_scene load_steps=4 format=3 uid="uid://6jvj5gponv8d"]
 
-[ext_resource type="PackedScene" uid="uid://v2votk1xbv21" path="res://RpgStats/Menu/RpgStatMenu.tscn" id="1_dq5j5"]
-[ext_resource type="Script" path="res://RpgStats/StatContainer.gd" id="2_4im31"]
+[ext_resource type="PackedScene" uid="uid://1gjpif22xk8k" path="res://addons/rpgstats/Menu/RpgStatMenu.tscn" id="1_dq5j5"]
 [ext_resource type="Script" path="res://Sample/SampleSceneDebugMenu.gd" id="2_7d8we"]
+[ext_resource type="Script" path="res://addons/rpgstats/StatContainer.gd" id="3_ga0vl"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,7 +16,8 @@ offset_bottom = 627.0
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStatMenu" parent="Control" node_paths=PackedStringArray("statContainer") instance=ExtResource("1_dq5j5")]
-statContainer = NodePath("../../Stat Container")
+layout_mode = 1
+statContainer = NodePath("../../RpgStatContainer")
 
 [node name="Debug Menu" type="Panel" parent="." node_paths=PackedStringArray("stat_container")]
 offset_left = 679.0
@@ -24,10 +25,10 @@ offset_top = 64.0
 offset_right = 1125.0
 offset_bottom = 564.0
 script = ExtResource("2_7d8we")
-stat_container = NodePath("../Stat Container")
+stat_container = NodePath("../RpgStatContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug Menu"]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1.0
@@ -36,28 +37,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Debug Menu/VBoxContainer"]
-offset_right = 445.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "Debug Menu"
 horizontal_alignment = 1
 
 [node name="CheckSelectedSkillXp" type="Button" parent="Debug Menu/VBoxContainer"]
-offset_top = 30.0
-offset_right = 445.0
-offset_bottom = 61.0
+layout_mode = 2
 text = "Check Selected Skill XP"
 
 [node name="Add100Xp" type="Button" parent="Debug Menu/VBoxContainer"]
-offset_top = 65.0
-offset_right = 445.0
-offset_bottom = 96.0
+layout_mode = 2
 text = "Add 100 XP to Selected Skill"
 
 [node name="OptionButton" type="OptionButton" parent="Debug Menu/VBoxContainer"]
-offset_top = 100.0
-offset_right = 445.0
-offset_bottom = 120.0
+layout_mode = 2
 
-[node name="Stat Container" type="Node" parent="."]
-script = ExtResource("2_4im31")
-stats = {}
+[node name="RpgStatContainer" type="Node" parent="."]
+script = ExtResource("3_ga0vl")

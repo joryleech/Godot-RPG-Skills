@@ -8,40 +8,16 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Panel",
-"class": &"RpgStatMenuStat",
-"language": &"GDScript",
-"path": "res://RpgStats/Menu/RpgStatMenuStat.gd"
-}, {
-"base": "Resource",
-"class": &"Stat",
-"language": &"GDScript",
-"path": "res://RpgStats/Stat.gd"
-}, {
-"base": "Node",
-"class": &"StatContainer",
-"language": &"GDScript",
-"path": "res://RpgStats/StatContainer.gd"
-}, {
-"base": "RefCounted",
-"class": &"StatValue",
-"language": &"GDScript",
-"path": "res://RpgStats/StatValue.gd"
-}]
-_global_script_class_icons={
-"RpgStatMenuStat": "",
-"Stat": "",
-"StatContainer": "",
-"StatValue": ""
-}
-
 [application]
 
 config/name="RpgStats"
 run/main_scene="res://Sample/SampleScene.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rpgstats/plugin.cfg")
 
 [rendering]
 

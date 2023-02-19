@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d0uui5eyxnjkf"]
+[gd_resource type="Resource" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://RpgStats/Stat.gd" id="1_3kpw5"]
+[ext_resource type="Script" path="res://addons/rpgstats/Stat.gd" id="1_3kpw5"]
 
 [sub_resource type="Curve" id="Curve_stnyp"]
 max_value = 100.0

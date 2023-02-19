@@ -1,11 +1,11 @@
 extends Panel
-const RPG_STAT_PATH = "res://RpgStats/Stats/"
+const RPG_STAT_PATH = "res://addons/rpgstats/Stats/"
 var dropdown_menu : OptionButton
 var stats : Array
 
 @export var stat_container : StatContainer
 func _ready():
-	
+	print(stat_container)
 	_initialize_stats()
 	#Initialize Dropdown Menu
 	_initialize_dropdown_menu()
@@ -17,7 +17,8 @@ func _ready():
 func _initialize_stats():
 	var stats_dir = DirAccess.get_files_at(RPG_STAT_PATH)
 	for stat in stats_dir:
-		var loaded_stat = ResourceLoader.load(RPG_STAT_PATH+stat, "Stat")
+		var file_name = stat.replace('.remap', '')
+		var loaded_stat = ResourceLoader.load(RPG_STAT_PATH+file_name, "Stat")
 		stats.append(loaded_stat)
 
 func _initialize_dropdown_menu():

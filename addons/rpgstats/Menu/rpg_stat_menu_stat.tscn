@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://l1cjj25qxcih"]
 
-[ext_resource type="Script" path="res://RpgStats/Menu/RpgStatMenuStat.gd" id="1_hosdo"]
-[ext_resource type="Texture2D" uid="uid://dh6ec37wlsdkn" path="res://icon.svg" id="2_u1k32"]
+[ext_resource type="Script" path="res://addons/rpgstats/Menu/RpgStatMenuStat.gd" id="1_f8lai"]
+[ext_resource type="Texture2D" uid="uid://dh6ec37wlsdkn" path="res://icon.svg" id="2_hvume"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06jqm"]
 font_size = 25
@@ -15,9 +15,10 @@ custom_minimum_size = Vector2(100, 100)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 1.25
-script = ExtResource("1_hosdo")
+script = ExtResource("1_f8lai")
 
 [node name="Level Number" type="Label" parent="."]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 57.0
 offset_right = 76.0
@@ -28,9 +29,10 @@ label_settings = SubResource("LabelSettings_06jqm")
 horizontal_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 3.0
 offset_right = 76.0
 offset_bottom = 59.0
-texture = ExtResource("2_u1k32")
-ignore_texture_size = true
+texture = ExtResource("2_hvume")
+expand_mode = 1

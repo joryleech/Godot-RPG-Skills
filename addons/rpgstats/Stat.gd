@@ -12,14 +12,13 @@ enum LevelingType {
 @export var description : String
 @export var xp_expression : String = ""
 @export var xp_curve : Curve = Curve.new()
+@export var xp_curve_multiplier : float = 1 #Curves max out at 1024.
 @export var max_level : int  = 100
-@export var max_xp : int  = 100000000
 @export var hidden : bool = false;
 #Prevents Skill from rendering in stat container if xp is less than 1
 @export var hidden_at_zero_xp = true
 
 func xp_to_level(xp : int): 
-	print(level_type)
 	match level_type:
 		LevelingType.expression:
 			return xp_to_level_expression(xp)
@@ -30,8 +29,8 @@ func xp_to_level(xp : int):
 func xp_to_level_curve(xp: int):
 	var total_xp = 0
 	for i in range(0, max_level):
-		var percentage_curve = i/max_level
-		total_xp += xp_curve.sample_baked(percentage_curve)
+		var percentage_curve = float(i)/float(max_level)
+		total_xp += xp_curve.sample_baked(percentage_curve)*xp_curve_multiplier
 		if(total_xp > xp): 
 			return i
 	return max_level

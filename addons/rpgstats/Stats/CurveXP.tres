@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=4 format=3 uid="uid://btetlogqe2p6v"]
+
+[ext_resource type="Script" path="res://addons/rpgstats/Stat.gd" id="1_b58qe"]
+[ext_resource type="Texture2D" uid="uid://dh6ec37wlsdkn" path="res://icon.svg" id="1_o1d6k"]
+
+[sub_resource type="Curve" id="Curve_d74fd"]
+_data = [Vector2(0, 0.109091), 0.0, 1.23093, 0, 0, Vector2(0.986842, 0.981818), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_b58qe")
+icon = ExtResource("1_o1d6k")
+level_type = 1
+name = "Curve XP"
+description = ""
+xp_expression = ""
+xp_curve = SubResource("Curve_d74fd")
+xp_curve_multiplier = 1000.0
+max_level = 100
+hidden = false
+hidden_at_zero_xp = false
